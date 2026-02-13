@@ -21,3 +21,11 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+// run should execution java Main
+tasks.register('run', JavaExec) {
+    group = 'application'
+    mainClass = 'org.example.Main'
+    classpath = sourceSets.main.runtimeClasspath
+    standardInput = System.in
+}
